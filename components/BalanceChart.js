@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import { Line } from 'react-chart.js-2'
-import React from 'react';
+import { Line } from 'react-chartjs-2'
+import React from 'react'
+import Chart from 'chart.js/auto'
 
 const data = {
     labels: [
@@ -38,16 +39,23 @@ const data = {
         },
     ],
 }
+
+const options = {
+    plugins: {
+        legend: {
+            display: false,
+        }
+    }
+}
         
 const BalanceChart = () => {
   return (
   <Wrapper>
-  <Line data={data} options={options} width={400} height={400} />
+    <Line data={data} options={options} width={400} height={150} />
   </Wrapper>
   )
 };
 
 export default BalanceChart;
 
-const Wrapper = styled.div`
-`
+const Wrapper = styled.div``
